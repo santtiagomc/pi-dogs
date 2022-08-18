@@ -7,7 +7,7 @@ const {YOUR_API_KEY} = process.env;
 router.get("/", async (req, res) => {
     try {
         const temperamentApi = await axios(`https://api.thedogapi.com/v1/breeds?api_key=${YOUR_API_KEY}`)
-        const temperament = temperamentApi.data.map (el => el.temperament).join(", ").split(", ").filter(el => el !="")
+        const temperament = temperamentApi.data.map(el => el.temperament).join(", ").split(", ").filter(el => el !="")
 
         temperament.forEach(el => {
             Temperament.findOrCreate ({

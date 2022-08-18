@@ -65,6 +65,8 @@ router.post("/", async (req, res) => {
     }
 });
 
+// esta ruta .delete no es obligatoria
+
 router.delete('/:id', async (req, res) => {
     try {
         let {id} = req.params;
