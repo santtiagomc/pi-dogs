@@ -1,15 +1,17 @@
 import axios from "axios";
 
-export function getDogs() {
+export const GET_ALL_DOGS = "GET_ALL_DOGS";
+
+export function getAllDogs() {
     return async function(dispatch){
         try {
             var json = await axios.get ("http://localhost:3001/dogs");
             return dispatch({
-                type: 'GET_ALL_DOGS',
+                type: GET_ALL_DOGS,
                 payload: json.data
             })
         } catch (error) {
-            alert("Charge failed")
+            alert("Charge failled")
         }
     }
 }
