@@ -5,7 +5,7 @@ export default function LandingPage(){
     return(
         <div>
             <h1>Bienvenidos a la pagina de dogs</h1>
-            <Link to = '/home'>
+            <Link to = '/dogs'>
                 <button>Ingresar</button>
             </Link>
         </div>
