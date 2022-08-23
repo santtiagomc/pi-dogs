@@ -1,7 +1,7 @@
 import React  from 'react'
-import {addFavorite} from '../Actions'
+import {addFavorite} from '../actions'
 import {useDispatch} from 'react-redux'
-import s from './Styles/FavoriteAction.module.css'
+import s from './styles/FavoritesActions.css'
 import Like from './Img/like.png'
 
 

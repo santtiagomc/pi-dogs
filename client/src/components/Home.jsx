@@ -1,14 +1,14 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderSort /*orderByName, orderByWeight*/} from '../../Actions';
-import Card from '../Card'
-import Nav from '../Nav'
-import Pagination from '../Pagination';
-import SearchBar from '../../Components/SearchBar';
+import {getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderSort /*orderByName, orderByWeight*/} from '../actions';
+import Card from './Card'
+import Nav from './Nav'
+import Pagination from './Pagination';
+import SearchBar from './SearchBar';
 import Reload from '../Img/reload.png'
 import load from '../Img/loading.gif'
-import s from '../Styles/Home.module.css'
+import s from './styles/Home.css'
 import next from '../Img/next.png'
 import prev from '../Img/previus.png'
 

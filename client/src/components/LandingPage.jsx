@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import s from "../Styles/LandingPage.module.css"
+import s from "./styles/LandingPage.css"
 import logo from '../Img/welcome.png'
 import DataWoof from '../Img/datawoof.jpg'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './Styles/Pagination.module.css'
+import s from './styles/Pagination.css'
 
 function Pagination({dogsPerPage, allDogs, paginado }) {
     const pageNumbers = []

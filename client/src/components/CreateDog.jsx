@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react'
-import Nav from '../Nav'
+import Nav from './Nav'
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from "react-router-dom";
-import {postDog, getTemperaments} from '../../Actions';
+import {postDog, getTemperaments} from '../actions';
 import {Link} from 'react-router-dom'
-import s from '../Styles/CreateDog.module.css'
-import Remove from '../Img/remove.png'
-import Barking from "../Img/fotocarnet.jpg"
-import ok from "../Img/ok.png"
-import back from '../Img/back.png'
+import s from '../components/styles/CreateDog.css'
+import Remove from './Img/remove.png'
+import Barking from "./Img/fotocarnet.jpg"
+import ok from "./Img/ok.png"
+import back from './Img'
 
 
 function validate (input) {

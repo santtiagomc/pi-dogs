@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { getDetail, clearDetail, getAllDogs, deleteDog  } from "../../Actions";
+import { getDetail, clearDetail, getAllDogs, deleteDog  } from "../actions";
 import {useHistory} from 'react-router-dom'
-import Nav from '../Nav'
+import Nav from './Nav'
 import load from '../Img/loading.gif'
 import barking from '../Img/fotocarnet.jpg'
-import s from '../Styles/Detail.module.css'
+import s from './styles/Detail.css'
 import remove from '../Img/remove.png'
 
 

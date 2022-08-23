@@ -2,7 +2,7 @@ import React from 'react'
 import FavoritesActions from './FavoritesActions'
 import carnet from '../Components/Img/fotocarnet.jpg'
 import barking from '../Components/Img/barking.jpg'
-import s from './Styles/Card.module.css'
+import s from './styles/Card.css'
 import {Link} from 'react-router-dom';
 
 

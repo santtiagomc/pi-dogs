@@ -5,7 +5,7 @@ import Home from './Img/home1.png'
 import Like from './Img/like.png'
 import Create from './Img/create.png'
 import About from './Img/dog.png'
-import s from './Styles/Nav.module.css'
+import s from './styles/Nav.css'
 
 
 function Nav() {

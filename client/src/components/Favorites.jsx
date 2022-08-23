@@ -1,11 +1,11 @@
 import React from 'react'
-import {removeFavorite} from '../../Actions'
+import {removeFavorite} from '../actions'
 import {useSelector, useDispatch} from 'react-redux'
-import Nav from '../Nav'
+import Nav from './Nav'
 import barking from '../Img/barking.jpg'
 import remove from '../Img/remove.png'
 import like from '../Img/favorito.png'
-import s from "../Styles/Favorites.module.css"
+import s from "./styles/Favorites.css"
 
 
 function Favorites() {  
