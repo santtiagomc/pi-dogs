@@ -10,18 +10,28 @@ export default function Home (){
     const dispatch = useDispatch()
     const allDogs = useSelector ((state) => state.dogs)
 
-    function handleClick(e){
-        e.preventDefault();
-        dispatch(getAllDogs());
-    }
+
+    const [currentPage, setCurrentPage] = useState(1)
+    const dogsPerPage = 8
+    const numbersOfLastDog = currentPage * dogsPerPage   //8
+    const numberOfFirtsDog = numbersOfLastDog - dogsPerPage //0
+    const currentDog = allDogs.slice(numberOfFirtsDog, numbersOfLastDog) 
+
 
     useEffect (() => {
         dispatch (getAllDogs());
     }, [dispatch])
 
+
+    function handleClick(e){
+        e.preventDefault();
+        dispatch(getAllDogs());
+    }
+
+
     return (
         <div>
-            <Link to = '/dogs'>Crear perrito</Link>
+            <Link to = '/create'>Crear perrito</Link>
             <h1>Vamos perritos!!!!!🐶</h1>
             <button onClick={e => {handleClick(e)}}>
                 Volver a cargar todos los perritos
@@ -41,24 +51,21 @@ export default function Home (){
                     <option value = "created">Created Breeds</option>
                     <option value = "api"> Api Breeds</option>
                 </select>
-                {
-                    allDogs?.map((el) => {
-                        return (
-                            <fragment>
-                                <Link>
-                                <Card
-                                    name = {el.name}
-                                    image = {el.image}
-                                    key = {el.id}
-                                    id = {el.id}
-                                    weight = {el.weight}
-                                    temperament={el.temperament}
-                                        />
-                                </Link>
-                            </fragment>
-                        )
-                    })
-                }
+                {currentDog.map(el=> {
+            return(
+                <div key={el.id}>
+                      <Card
+                   name = {el.name.toUpperCase()}
+                   id = {el.id}
+                   key = {el.id}
+                   image = {el.image}
+                   weight = {el.weight.imperial}
+                   height = {el.height.imperial}
+                    />
+                   </div>
+            )
+        })
+        }
             </div>
         </div>
     )

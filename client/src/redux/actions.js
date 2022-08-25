@@ -1,11 +1,13 @@
 import axios from 'axios';
 
+export const GET_ALL_DOGS = "GET_ALL_DOGS"
+
 export function getAllDogs () {
     return async function (dispatch){
         try {
             var json = await axios("http://localhost:3001/dogs")
             return dispatch ({
-                type: "GET_ALL_DOGS",
+                type: GET_ALL_DOGS,
                 payload: json.data
             })
          }
