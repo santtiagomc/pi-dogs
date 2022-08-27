@@ -11,6 +11,7 @@ const getApiInfo = async () => {
             name: el.name,
             height: el.height,
             weight: el.weight,
+            temperament: el.temperament,
             life_span: el.life_span,
             image: `https://cdn2.thedogapi.com/images/${el.reference_image_id}.jpg`
         }
