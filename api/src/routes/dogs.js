@@ -13,7 +13,7 @@ router.get("/", async(req, res, next) => {
                 el.name.toUpperCase().includes(name.toUpperCase()))
                 dogName.length ?
                 res.status(200).send(dogName) :
-                req.status(404).send(`error: ${name}, invalido`)
+                res.status(404).send(`error: ${name}, invalido`)
         } else {
             res.status(200).json(totalDogs ? totalDogs : `No ${name}, encontrado`)
         }
@@ -42,8 +42,10 @@ router.post("/", async (req, res) => {
     let {
         name,
         life_span,
-        height,
-        weight,
+        min_weight, 
+        max_weight, 
+        min_height, 
+        max_height,
         image,
         temperament,
     } = req.body;
@@ -51,8 +53,10 @@ router.post("/", async (req, res) => {
         let postDog = await Dogs.create ({
             name,
             life_span,
-            height,
-            weight,
+            min_weight, 
+            max_weight, 
+            min_height, 
+            max_height,
             image
         })
         let temperamentDb = await Temperament.findAll ({

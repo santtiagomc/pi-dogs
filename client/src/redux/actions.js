@@ -5,6 +5,7 @@ export const GET_TEMPERAMENT = "GET_TEMPERAMENT"
 export const FILTER_BY_TEMPERAMENTS= "FILTER_BY_TEMPERAMENTS";
 export const FILTER_CREATED = "FILTER_CREATED"
 export const GET_NAME_DOG = "GET_NAME_DOG"
+export const ORDER_SORT = "ORDER_SORT"
 
 
 export function getAllDogs () {
@@ -60,3 +61,10 @@ export function getNameDog (payload) {
         }
     }
 };
+
+export function orderSort(payload){
+    return {
+        type: ORDER_SORT,
+        payload
+    }
+}

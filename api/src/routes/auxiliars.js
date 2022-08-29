@@ -9,8 +9,10 @@ const getApiInfo = async () => {
         return {
             id: el.id,
             name: el.name,
-            height: el.height,
-            weight: el.weight,
+            min_weight: Number(el.weight.metric.slice(0,2)),
+            max_weight: Number(el.weight.metric.slice(4)),
+            min_height: Number(el.height.metric.slice(0,2)),
+            max_height: Number(el.height.metric.slice(4)),
             temperament: el.temperament,
             life_span: el.life_span,
             image: `https://cdn2.thedogapi.com/images/${el.reference_image_id}.jpg`

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllDogs, getTemperaments, filterByTemperaments, filterCreated } from '../redux/actions';
+import { getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderSort } from '../redux/actions';
 import { Link } from 'react-router-dom';
 import Card from "./Card";
 import Pagination from './Pagination'
@@ -48,6 +48,15 @@ export default function Home (){
         setBreeds(e.target.value)
     }
 
+    const [,setOrden] = useState('Default')
+    function handleSort (e){
+        e.preventDefault()
+        dispatch(orderSort(e.target.value))
+        setCurrentPage(1)
+        setOrden(e.target.value)
+    }
+
+
     useEffect (() => {
         dispatch (getAllDogs());
         dispatch (filterByTemperaments())
@@ -67,7 +76,7 @@ export default function Home (){
             </button>
             <SearchBar />
             <div>
-            <select>
+            <select onChange={e => handleSort(e)}>
                 <option value ="default"> Sort by.. </option>
                 <option value = "az"> A-Z</option>
                 <option value = "za"> Z-A </option>
@@ -102,8 +111,8 @@ export default function Home (){
                    id = {el.id}
                    key = {el.id}
                    image = {el.image}
-                   weight = {el.weight.imperial}
-                   height = {el.height.imperial}
+                   min_weight = {el.min_weight}
+                   max_weight = {el.max_weight}
                    temperament = {el.temperament}
                     />
                 </div>
