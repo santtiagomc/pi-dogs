@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Card from "./Card";
 import Pagination from './Pagination'
 import SearchBar from "./SearchBar";
+import CreateDog from "./CreateDog";
 
 export default function Home (){
 
@@ -68,7 +69,8 @@ export default function Home (){
 
     return (
         <div>
-            <Link to = '/create'>Crear perrito</Link>
+            <Link to = '/dogs/create'> Crear perro
+            </Link>
             
             <h1>Vamos perritos!!!!!🐶</h1>
             <button onClick={e => {handleClick(e)}}>

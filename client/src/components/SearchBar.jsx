@@ -11,17 +11,18 @@ export default function SearchBar(){
     function handleInputChange (e) {
         e.preventDefault();
         setName(e.target.value);
-          }
+        // console.log(name)
+    }
 
     function handleSubmit(e){
     e.preventDefault();
     if(name.length === 0) {
         return alert ("Please write a breed")
-    } else{
+    }else{
         dispatch(getNameDog(name));
         setName("")
         }
-        }
+    }
         
         return (
         
@@ -37,6 +38,6 @@ export default function SearchBar(){
                     <button type = 'submit' 
                     onClick = {(e) => handleSubmit(e)}> SEARCH
                     </button>
-                    </div>
+                </div>
         )
 }
