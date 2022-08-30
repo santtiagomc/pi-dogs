@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import Card from "./Card";
 import Pagination from './Pagination'
 import SearchBar from "./SearchBar";
-import CreateDog from "./CreateDog";
 
 export default function Home (){
 
@@ -115,7 +114,8 @@ export default function Home (){
                    image = {el.image}
                    min_weight = {el.min_weight}
                    max_weight = {el.max_weight}
-                   temperament = {el.temperament}
+                   temperaments={el.temperaments?.map((t) => t.name).join(', ')}
+                   temperament={el.temperament}
                     />
                 </div>
                 

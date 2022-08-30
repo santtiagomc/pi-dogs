@@ -105,8 +105,8 @@ const handleDelete = (e) => {
         max_height: "",
         image: "",
         temperament: []
-          })
-    history.push("/create")
+    })
+    history.push("/dogs")
 }
 else{
     alert ("Missing info!")
@@ -118,6 +118,7 @@ function handleChange(e) {
         ...input,
         [e.target.name] : e.target.value
      })
+    //  console.log(input)
      setErrors(validate({
          ...input,
          [e.target.name] : e.target.value
@@ -129,8 +130,6 @@ useEffect (() => {
 }, [dispatch])
 
     return (
-        <div >
-        <div>
         <div>
         <div>
             <h1> CREATE YOUR OWN DOG'S BREED </h1>
@@ -147,9 +146,7 @@ useEffect (() => {
                     name="name" 
                     onChange = {(e) => handleChange(e)}/>
                      {errors.name && (<p>{errors.name}</p>)}  
-                </div>   
-                <img src="" alt="Foto perrito"/>
-                <div>       
+                   
                     <label>Life Span </label>
                     <input
                         type= "number"
@@ -227,9 +224,9 @@ useEffect (() => {
             </div>
 
             <div>
-                <button disabled={Object.keys(errors).length > 0 || input.temperament.length === 0 ? true : false} type ='submit'> <p><img src="" width="40px" height="40px" alt="create"/> CREATE </p> </button>          
+                <button disabled={Object.keys(errors).length > 0 || input.temperament.length === 0 ? true : false} type ='submit'> <p> CREATE </p> </button>          
                 <Link to="/dogs">
-                    <button><p><img src="" width="40px" height="40px" alt="back"/>BACK </p></button>
+                    <button><p>BACK</p></button>
                 </Link>
             </div>
         </form>
@@ -240,8 +237,6 @@ useEffect (() => {
                 {input.temperament.map(el=>  <li> {el} <button onClick={() =>handleDelete(el)}>
                 <img src="" height= "15px" weight= "15px"alt="delete"/> </button></li> )}
             </ul>
-        </div>
-        </div>
         </div>
         </div>
     )
