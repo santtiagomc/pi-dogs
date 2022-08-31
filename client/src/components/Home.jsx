@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Card from "./Card";
 import Pagination from './Pagination'
 import SearchBar from "./SearchBar";
+import imgBackground from '../img/BackgroundHome.jpg'
 
 export default function Home (){
 
@@ -68,6 +69,7 @@ export default function Home (){
 
     return (
         <div>
+            
             <Link to = '/dogs/create'> Crear perro
             </Link>
             
