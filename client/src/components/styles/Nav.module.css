@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+.nav{
+    position: top;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-content: space-around;
+    background-color: #202020;
+    width:1450px;
+    padding-bottom: 20px;
+    border-bottom: whitesmoke 3px solid;
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-right: 50px;
+}
+
+.btn{
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    color: rgba(230, 227, 227, 0.726);
+    font-size: 18px;
+    border-color: transparent;
+    cursor: pointer;
+    top: 10px;
+    justify-content: center;
+    justify-items: center;
+}
