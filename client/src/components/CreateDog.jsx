@@ -10,8 +10,7 @@ function validate (input) {
         errors.name = "Name is required"}
     else if (!input.name.match(/^[A-Za-z\s]+$/)){
         errors.name = "Only letters, please"
-    
-}
+    }
     
     if(!input.life_span){
         errors.life_span = "Life span is required"
@@ -145,7 +144,7 @@ useEffect (() => {
                     value= {input.name.toUpperCase()}
                     name="name" 
                     onChange = {(e) => handleChange(e)}/>
-                     {errors.name && (<p>{errors.name}</p>)}  
+                    {errors.name && (<p>{errors.name}</p>)}  
                    
                     <label>Life Span </label>
                     <input
@@ -234,8 +233,8 @@ useEffect (() => {
         <div>
             <p>Temperaments: </p>
             <ul>
-                {input.temperament.map(el=>  <li> {el} <button onClick={() =>handleDelete(el)}>
-                <img src="" height= "15px" weight= "15px"alt="delete"/> </button></li> )}
+                {input.temperament.map(el=>  <li> {el} <button onClick={() =>handleDelete(el)}>X
+                </button></li> )}
             </ul>
         </div>
         </div>

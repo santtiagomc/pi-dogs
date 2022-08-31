@@ -7,6 +7,7 @@ export const FILTER_CREATED = "FILTER_CREATED"
 export const GET_NAME_DOG = "GET_NAME_DOG"
 export const ORDER_SORT = "ORDER_SORT"
 export const POST_DOG = "POST_DOG"
+export const GET_DETAIL = "GET_DETAIL"
 
 
 export function getAllDogs () {
@@ -84,3 +85,18 @@ export function postDog (payload) {
         }
     } 
 }
+
+export function getDetail(payload){
+    return async function(dispatch){
+        try{
+            var json = await axios.get(`http://localhost:3001/dogs/${payload}`)
+            return dispatch({
+                type: GET_DETAIL,
+                payload: json.data
+            });
+        }
+      catch(error){
+        alert("Try another ID")
+      }
+    }
+};
