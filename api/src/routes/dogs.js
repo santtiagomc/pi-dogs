@@ -48,6 +48,7 @@ router.post("/", async (req, res) => {
         max_height,
         image,
         temperament,
+        createdInDataBase,
     } = req.body;
     try {
         let postDog = await Dogs.create ({
@@ -57,7 +58,8 @@ router.post("/", async (req, res) => {
             max_weight, 
             min_height, 
             max_height,
-            image
+            image,
+            createdInDataBase,
         })
         let temperamentDb = await Temperament.findAll ({
             where: {name: temperament}
