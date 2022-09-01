@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Card from "./Card";
 import Pagination from './Pagination'
 import SearchBar from "./SearchBar";
-import imgBackground from '../img/BackgroundHome.jpg'
+import style from './styles/Home.module.css'
 
 export default function Home (){
 
@@ -68,63 +68,77 @@ export default function Home (){
 
 
     return (
-        <div>
+        <div className={style.links}>
+            <div className={style.container}>
+                <div className={style.title}>
+                    <h1>SPA Dogs🐶</h1>
+                </div>
+                <Link to = '/dogs'> Home
+                </Link>
+                <Link to = '/dogs/create'> Add new breed
+                </Link>
+                <Link to = '/dogs/about'> About
+                </Link>
+                <button onClick={e => {handleClick(e)}}>
+                    Volver a cargar todos los perritos
+                </button>
+                </div>
             
-            <Link to = '/dogs/create'> Crear perro
-            </Link>
-            
-            <h1>Vamos perritos!!!!!🐶</h1>
-            <button onClick={e => {handleClick(e)}}>
-                Volver a cargar todos los perritos
-            </button>
-            <SearchBar />
-            <div>
-            <select onChange={e => handleSort(e)}>
-                <option value ="default"> Sort by.. </option>
-                <option value = "az"> A-Z</option>
-                <option value = "za"> Z-A </option>
-                <option value = "asc"> Lightest </option>
-                <option value = "desc"> Heaviest </option>
-            </select>
-            </div>
-            <div >     
-                <select onChange={(e) => {handleFilterCreated(e)}}> 
+            <div className={style.filter}>
+                <h3>Filter By</h3>
+                <select onChange={e => handleSort(e)}>
+                    <option value ="default"> Sort by.. </option>
+                    <option value = "az"> A-Z</option>
+                    <option value = "za"> Z-A </option>
+                </select>
+                <select onChange={e => handleSort(e)}>
+                    <option value = "asc"> Lightest </option>
+                    <option value = "desc"> Heaviest </option>
+                </select>
+             
+                <select  onChange={(e) => {handleFilterCreated(e)}}> 
                     <option value = "all">Breeds</option>
                     <option value = "created">Created Breeds</option>
                     <option value = "api"> Api Breeds</option>
                 </select>
-            <select value = {temperament} onChange = {(e)=> handleSelect(e)}>
-                <option value="All"> Temperaments </option>
-                {temperaments.map((temp, index) => (
-                    <option onClick = {(e)=> handleClick(e)} key={index}>
-                    {temp.name}
-                    </option>
-                ))}
-            </select>
-                <Pagination
+                <select value = {temperament} onChange = {(e)=> handleSelect(e)}>
+                    <option value="All"> Temperaments </option>
+                    {temperaments.map((temp, index) => (
+                        <option onClick = {(e)=> handleClick(e)} key={index}>
+                        {temp.name}
+                        </option>
+                    ))}
+                </select> 
+            </div>
+            <SearchBar />
+            <Pagination
+                dogsPerPage={dogsPerPage}
+                allDogs={allDogs.length}
+                paginado={paginado}
+            />
+            <div className={style.card}>
+                {currentDog.map(el=> {
+                    return(
+                        <div key={el.id}  >
+                            <Card
+                                name = {el.name.toUpperCase()}
+                                // id = {el.id}
+                                key = {el.id}
+                                image = {el.image}
+                                min_weight = {el.min_weight}
+                                max_weight = {el.max_weight}
+                                temperaments={el.temperaments?.map((t) => t.name).join(', ')}
+                                temperament={el.temperament}
+                            />
+                        </div>
+                    )
+                })}
+            </div>
+            <Pagination
                     dogsPerPage={dogsPerPage}
                     allDogs={allDogs.length}
                     paginado={paginado}
                 />
-                {currentDog.map(el=> {
-            return(
-                <div key={el.id}>
-                      <Card
-                   name = {el.name.toUpperCase()}
-                   id = {el.id}
-                   key = {el.id}
-                   image = {el.image}
-                   min_weight = {el.min_weight}
-                   max_weight = {el.max_weight}
-                   temperaments={el.temperaments?.map((t) => t.name).join(', ')}
-                   temperament={el.temperament}
-                    />
-                </div>
-                
-            )
-        })
-        }
-            </div>
         </div>
     )
 
