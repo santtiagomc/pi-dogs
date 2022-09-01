@@ -2,7 +2,16 @@
     margin: 4px;
     border: 2px solid black;
     height: 500px;
-    width: 300px;
-    background-color: rgba(188, 184, 184, 0.756);
-    
+    width: 260px;
+    background-color: rgba(255, 255, 255, 0.756);
+    border-radius: 14px;
+}
+.img {
+    width: 200px;
+    height: 250px;
+    border-radius: 12px;
+}
+.card h4{
+    color: black;
+    background-color: white;
 }

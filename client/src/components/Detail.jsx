@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { getDetail } from "../redux/actions";
 import Nav from './Nav';
+import style from './styles/Detail.module.css'
 
 export default function Detail(props) {
     const dispatch = useDispatch()

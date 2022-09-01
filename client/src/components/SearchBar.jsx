@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getNameDog } from '../redux/actions';
+import style from './styles/SearchBar.module.css'
 
 
 export default function SearchBar(){
@@ -26,7 +27,7 @@ export default function SearchBar(){
         
         return (
         
-                <div>
+                <div className={style.search}>
                     <input
                     type = "text"
                     placeholder='Search...'
@@ -36,7 +37,7 @@ export default function SearchBar(){
                     onChange = {(e) => handleInputChange(e)}
                     />
                     <button type = 'submit' 
-                    onClick = {(e) => handleSubmit(e)}> SEARCH
+                    onClick = {(e) => handleSubmit(e)} > <img src="https://www.flaticon.es/svg/vstatic/svg/3917/3917061.svg?token=exp=1662044303~hmac=110f95ae8627bfdce48c88c71e2e5e2f" alt="search" />
                     </button>
                 </div>
         )

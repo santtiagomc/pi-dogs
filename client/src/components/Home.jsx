@@ -68,40 +68,38 @@ export default function Home (){
 
 
     return (
-        <div className={style.links}>
-            <div className={style.container}>
+        <div className={style.container}>
+            <div className={style.links}>
                 <div className={style.title}>
                     <h1>SPA Dogs🐶</h1>
-                </div>
-                <Link to = '/dogs'> Home
+                </div >
+                <Link to = '/dogs'> <p>Home</p>
                 </Link>
-                <Link to = '/dogs/create'> Add new breed
+                <Link to = '/dogs/create'><p> Add new breed</p>
                 </Link>
-                <Link to = '/dogs/about'> About
+                <Link to = '/dogs/about'> <p> About</p>
                 </Link>
-                <button onClick={e => {handleClick(e)}}>
-                    Volver a cargar todos los perritos
-                </button>
-                </div>
+                
+            </div>
             
             <div className={style.filter}>
                 <h3>Filter By</h3>
-                <select onChange={e => handleSort(e)}>
+                <select onChange={e => handleSort(e)} className={style.select} >
                     <option value ="default"> Sort by.. </option>
                     <option value = "az"> A-Z</option>
                     <option value = "za"> Z-A </option>
                 </select>
-                <select onChange={e => handleSort(e)}>
+                <select onChange={e => handleSort(e)} className={style.select}>
                     <option value = "asc"> Lightest </option>
                     <option value = "desc"> Heaviest </option>
                 </select>
              
-                <select  onChange={(e) => {handleFilterCreated(e)}}> 
+                <select  onChange={(e) => {handleFilterCreated(e)}} className={style.select}> 
                     <option value = "all">Breeds</option>
                     <option value = "created">Created Breeds</option>
                     <option value = "api"> Api Breeds</option>
                 </select>
-                <select value = {temperament} onChange = {(e)=> handleSelect(e)}>
+                <select value = {temperament} onChange = {(e)=> handleSelect(e)} className={style.select}>
                     <option value="All"> Temperaments </option>
                     {temperaments.map((temp, index) => (
                         <option onClick = {(e)=> handleClick(e)} key={index}>
@@ -111,18 +109,26 @@ export default function Home (){
                 </select> 
             </div>
             <SearchBar />
-            <Pagination
+            <button onClick={e => {handleClick(e)}} className={style.refresh}>
+                    Refresh
+            </button>
+            {/* <div>
+            <button  onClick = {() =>paginado(currentPage === 1 ? currentPage : currentPage-1)}> prev </button>
+            <button  onClick = {() =>paginado(currentPage ===23 ? currentPage : currentPage+1)}>Next</button>
+            </div> */}
+            <div className={style.paginado}><Pagination
                 dogsPerPage={dogsPerPage}
                 allDogs={allDogs.length}
                 paginado={paginado}
             />
+            </div>
             <div className={style.card}>
                 {currentDog.map(el=> {
                     return(
                         <div key={el.id}  >
                             <Card
                                 name = {el.name.toUpperCase()}
-                                // id = {el.id}
+                                id= {el.id}
                                 key = {el.id}
                                 image = {el.image}
                                 min_weight = {el.min_weight}

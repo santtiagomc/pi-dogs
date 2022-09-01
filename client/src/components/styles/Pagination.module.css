@@ -1,15 +1,33 @@
 .lista1 {
-  background-color: rgba(255, 255, 255, 0.59);
-  border: 5px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  background-color: rgba(255, 255, 255, 0.794);
+  border-radius: 8px;
+  height: 36px;
+  width: 62vw;
+  margin: 10px auto;
+  padding: 0;
 }
 
 .lista1 li {
-  display:inline;
-  padding-left:3px;
-  padding-right:3px;
+  display: flex;
+  margin: 2px;
 }
 
-.listabtn {
-  border-width: 4px;
-  border-color: white;
+
+
+.listabtn{
+  background-color: white;
+  color: black;
+  border: 1.5px solid black;
+  font-size: 18px;
+  border-radius: 6px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.listabtn:hover{
+  background-color: black;
+  color: white;
 }
