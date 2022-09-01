@@ -18,17 +18,19 @@ export default function Detail(props) {
     
     return (
     <div>
-        <Nav/>
+        <div className={style.nav}>
+            <Nav/>
+        </div>
 
-        <div> 
+        <div className={style.container}> 
             {
             myDog.length === 0 ?  
             <p>Load...</p> : 
             myDog.length > 0 && 
-            <div > 
+            <div className={style.detail}> 
                 {myDog[0].createdInDataBase? <button> This dogs is created in DB</button> : <p> </p> }
-                <h1> {myDog[0].name.toUpperCase()}</h1>
-                <>{myDog[0].image !== "" ? <img src = {myDog[0].image} alt= "Barking in another place" onError="" width="250px" height="300px" /> : <img src = "" alt = "Woof"/>} </>
+                <h2> {myDog[0].name.toUpperCase()}</h2>
+                <>{myDog[0].image !== "" ? <img src = {myDog[0].image} alt= "Barking in another place" onError="" className={style.img} /> : <img src = "" alt = "Woof"/>} </>
                 <h5 > Min Weight: {myDog[0].min_weight} kgs. - Max Weight: {myDog[0].max_weight} kgs.</h5>
                 <h5> Min Height: {myDog[0].min_height} cms. - Max Height: {myDog[0].max_height} cms. </h5>
                 <h5> Life Span : {myDog[0].life_span}</h5>
