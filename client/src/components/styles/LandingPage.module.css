@@ -6,13 +6,22 @@
 }
 
 
+.container{
+    background-image: url('../../img/fondo8.png');
+}
+
+
 .welcome{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    font-size: 40px;
+    height: 4rem;
+    
 }
 
 
 .btn{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.836);
     color: black;
     border: 1.5px solid black;
     font-size: 18px;

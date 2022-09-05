@@ -26,15 +26,17 @@
 }
 
 .temperament{
-    display: flex;
-    align-items: center;
-    justify-content: baseline;
+    font-weight: 600;
     background-color: rgba(255, 255, 255, 0.88);
     border: 1.5px solid black;
     border-radius: 8px;
-    width: 280px;
+    width: 32vw;
     height: 120px;
     margin: 10px auto;
+}
+
+.temperament p{
+    margin: 2px;
 }
 
 .btns{
@@ -58,7 +60,40 @@
     color: white;
 }
 
+.ul{
+    margin: 2px;
+    display: flex;
+    width: auto;
+    overflow: auto;
+    height: 20vh;
+    padding: 0;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
 .li{
+    display: flex;
     list-style: none;
-    background-color: antiquewhite;
+    font-size: 14px;
+    margin: 2px;
+}
+
+.btnx{
+    background-color: #ffe8e8;
+    color: black;
+    border: 1.5px solid black;
+    border-radius: 18px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    margin: 2px;
+}
+.btnx:hover{
+    background-color: rgb(228, 0, 0);
+    color: white;
+}
+.err{
+    display: contents;
+    color: red;
+    font-weight: 500;
 }

@@ -148,7 +148,7 @@ useEffect (() => {
                             value= {input.name.toUpperCase()}
                             name="name" 
                             onChange = {(e) => handleChange(e)} />
-                            {errors.name && (<p>{errors.name}</p>)}
+                            {errors.name && (<p className={style.err}>{errors.name}</p>)}
                         </div>  
                         <div className={style.select}>
                             <label className={style.title}>Life Span </label>
@@ -162,7 +162,7 @@ useEffect (() => {
                                 onChange = {(e) => handleChange(e)}
                             />
                             <label className={style.title}> years </label>
-                            {errors.life_span && (<p>{errors.life_span}</p>)}
+                            {errors.life_span && (<p className={style.err}>{errors.life_span}</p>)}
                         </div >     
                         <div className={style.select}>   
                             <label className={style.title}>Min weight   </label>
@@ -174,7 +174,7 @@ useEffect (() => {
                                 name="min_weight" 
                                 onChange = {(e) => handleChange(e)}/>
                             <label className={style.title}> kgs </label>
-                                {errors.min_weight && (<p>{errors.min_weight}</p>)}
+                                {errors.min_weight && (<p className={style.err}>{errors.min_weight}</p>)}
                         </div>
                         <div className={style.select}>    
                             <label className={style.title}>Max weight   </label>
@@ -187,7 +187,7 @@ useEffect (() => {
                                 onChange = {(e) => handleChange(e)}
                             />
                             <label className={style.title}> kgs </label>
-                        {errors.max_weight && (<p>{errors.max_weight}</p>)} 
+                        {errors.max_weight && (<p className={style.err}>{errors.max_weight}</p>)} 
                         </div>  
                         <div className={style.select}>  
                         <label className={style.title}>Min height   </label>
@@ -200,7 +200,7 @@ useEffect (() => {
                             onChange = {(e) => handleChange(e)}
                         />
                         <label className={style.title}> cms </label>
-                        {errors.min_height && (<p>{errors.min_height}</p>)} 
+                        {errors.min_height && (<p className={style.err}>{errors.min_height}</p>)} 
                         </div>    
                         <div className={style.select}>
                             <label className={style.title}>Max height   </label>
@@ -211,9 +211,9 @@ useEffect (() => {
                                 value= {input.max_height}
                                 name="max_height" 
                                 onChange = {(e) => handleChange(e)}
-                            />
+                                />
                             <label className={style.title}> cms </label>
-                            {errors.max_height && (<p>{errors.max_height}</p>)} 
+                            {errors.max_height && (<p className={style.err}>{errors.max_height}</p>)} 
                         </div>
                         <div className={style.select}>
                             <label className={style.title}>Picture   </label>
@@ -237,21 +237,19 @@ useEffect (() => {
                     <div >
                         
                     </div>
-                </form>
-
-                <div className={style.temperament}>
-                    <p>Temperaments: </p>
-                    <ul>
-                        {input.temperament.map(el=>  <li className={style.li}> {el} <button onClick={() =>handleDelete(el)}>X
-                        </button></li> )}
-                    </ul>
-                </div>
-                <div className={style.btns}>
-                            <button disabled={Object.keys(errors).length > 0 || input.temperament.length === 0 ? true : false} type ='submit'> CREATE </button>          
+                    <div className={style.temperament}>
+                        <ul className={style.ul}>
+                            {input.temperament.map(el=>  <li className={style.li}> {el} <button onClick={() =>handleDelete(el)} className={style.btnx}>X
+                            </button></li> )}
+                        </ul>
+                    </div>
+                    <div className={style.btns}>
+                        <button disabled={Object.keys(errors).length > 0 || input.temperament.length === 0 ? true : false} type ='submit'> CREATE </button>          
                         <Link to="/dogs">
-                            <button>BACK</button>
+                        <button>BACK</button>
                         </Link>
-                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     )

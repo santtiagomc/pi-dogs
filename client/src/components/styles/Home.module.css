@@ -43,8 +43,8 @@
 }
 
 .card {
-    position: relative;
     display: grid;
+    justify-items: center;
     grid-template-columns: repeat(4, 1fr);
     height: auto;
     width: 100%;

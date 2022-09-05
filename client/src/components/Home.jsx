@@ -75,7 +75,7 @@ export default function Home (){
                 </div >
                 <Link to = '/dogs'> <p>Home</p>
                 </Link>
-                <Link to = '/dogs/create'><p> Add new breed</p>
+                <Link to = '/dogs/create'><p> Create new breed</p>
                 </Link>
                 <Link to = '/dogs/about'> <p> About</p>
                 </Link>
