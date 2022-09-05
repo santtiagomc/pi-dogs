@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { getDetail } from "../redux/actions";
+import { getDetail, deleteDog } from "../redux/actions";
+import {useHistory} from 'react-router-dom'
 import Nav from './Nav';
 import style from './styles/Detail.module.css'
 
@@ -8,7 +9,13 @@ export default function Detail(props) {
     const dispatch = useDispatch()
     const id = props.match.params.id 
     const myDog = useSelector((state) => state.detail)
+    const history = useHistory()
 
+    const handleDelete = (el) =>{
+        dispatch(deleteDog(el.id))
+        alert("Delete Dog Successfully")
+        history.push('/dogs')
+    }
     
   
     useEffect(()=>{
@@ -28,7 +35,8 @@ export default function Detail(props) {
             <p>Load...</p> : 
             myDog.length > 0 && 
             <div className={style.detail}> 
-                {myDog[0].createdInDataBase? <button> This dogs is created in DB</button> : <p> </p> }
+                
+                {myDog[0].createdInDataBase? <button className={style.delete} onClick={() => handleDelete(myDog[0])}> DELETE </button> : <p> Don't charge anithing</p> }
                 <h2> {myDog[0].name.toUpperCase()}</h2>
                 <>{myDog[0].image !== "" ? <img src = {myDog[0].image} alt= "Barking in another place" onError="" className={style.img} /> : <img src = "" alt = "Woof"/>} </>
                 <h5 > Min Weight: {myDog[0].min_weight} kgs. - Max Weight: {myDog[0].max_weight} kgs.</h5>

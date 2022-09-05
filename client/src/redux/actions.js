@@ -8,6 +8,7 @@ export const GET_NAME_DOG = "GET_NAME_DOG"
 export const ORDER_SORT = "ORDER_SORT"
 export const POST_DOG = "POST_DOG"
 export const GET_DETAIL = "GET_DETAIL"
+export const DELETE = "DELETE"
 
 
 export function getAllDogs () {
@@ -100,3 +101,18 @@ export function getDetail(payload){
       }
     }
 };
+
+export function deleteDog (payload){
+    return async function (dispatch){
+        try{
+            const response = await axios.delete(`http://localhost:3001/dogs/${payload}`);
+            return {
+                type: DELETE,
+                payload: response.data
+            }
+        }
+        catch(error){
+            console.log(error)
+        }
+    }
+}
