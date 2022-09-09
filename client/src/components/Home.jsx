@@ -116,7 +116,8 @@ export default function Home (){
             <button  onClick = {() =>paginado(currentPage === 1 ? currentPage : currentPage-1)}> prev </button>
             <button  onClick = {() =>paginado(currentPage ===23 ? currentPage : currentPage+1)}>Next</button>
             </div> */}
-            <div className={style.paginado}><Pagination
+            <div className={style.paginado}>
+                <Pagination
                 dogsPerPage={dogsPerPage}
                 allDogs={allDogs.length}
                 paginado={paginado}
