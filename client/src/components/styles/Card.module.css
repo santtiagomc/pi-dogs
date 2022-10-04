@@ -1,9 +1,9 @@
 .card {
     margin: 4px;
     border: 2px solid black;
-    height: 380px;
+    height: 386px;
     width: 210px;
-    background-color: rgba(255, 255, 255, 0.756);
+    background-color: #c9fde0c2;
     border-radius: 14px;
 }
 .img {
@@ -12,14 +12,16 @@
     border-radius: 12px;
 }
 .card:hover {
-    transform: scale(1.4); 
+    transform: scale(1.2); 
 }
 .card h4{
+    border-radius: 6px;
     color: black;
     background-color: white;
     margin: 8px;
 }
 .card h6{
+    border-radius: 6px;
     color: black;
     background-color: white;
     margin: 8px;

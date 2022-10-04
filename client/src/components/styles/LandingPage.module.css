@@ -29,9 +29,15 @@
     border-radius: 8px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 .btn:hover{
-    background-color: black;
-    color: white;
+    background-color: #FFE699;
+    color: black;
+}
+
+.link{
+    text-decoration: none;
+    margin: 0 auto;
 }

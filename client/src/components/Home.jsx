@@ -2,10 +2,10 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderSort } from '../redux/actions';
-import { Link } from 'react-router-dom';
+import Nav from "./Nav"
 import Card from "./Card";
-import Pagination from './Pagination'
 import SearchBar from "./SearchBar";
+import Pagination from './Pagination'
 import style from './styles/Home.module.css'
 
 export default function Home (){
@@ -69,17 +69,9 @@ export default function Home (){
 
     return (
         <div className={style.container}>
-            <div className={style.links}>
-                <div className={style.title}>
-                    <h1>SPA Dogs🐶</h1>
-                </div >
-                <Link to = '/dogs'> <p>Home</p>
-                </Link>
-                <Link to = '/dogs/create'><p> Create new breed</p>
-                </Link>
-                <Link to = '/dogs/about'> <p> About</p>
-                </Link>
-                
+            <div>
+                <Nav />
+                <SearchBar />
             </div>
             
             <div className={style.filter}>
@@ -108,7 +100,6 @@ export default function Home (){
                     ))}
                 </select> 
             </div>
-            <SearchBar />
             <button onClick={e => {handleClick(e)}} className={style.refresh}>
                     Refresh
             </button>

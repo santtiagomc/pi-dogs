@@ -8,7 +8,7 @@ export default function LandingPage (){
             <div className={style.container}>
                 
                 <h1  className={style.welcome}> ➡  Welcome to the single page aplication for dogs! ⬅ </h1>
-                <Link to = '/dogs'>
+                <Link to = '/dogs' className={style.link}>
                     <button className={style.btn}> Get Into...</button>
                 </Link>
             </div>

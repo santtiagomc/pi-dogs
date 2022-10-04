@@ -7,9 +7,17 @@ function Nav() {
 
     return (
             <div className={style.container}>
-                <Link to= '/dogs'> <button>Home</button></Link>
-                <Link to = '/dogs/create'> <button> Create</button></Link>
-                <Link to = '/dogs/about'> <button> About</button></Link>
+                <div className={style.links}>
+                    <Link to= '/dogs'> <button>Home</button></Link>
+                    <Link to = '/dogs/create'> <button> Create</button></Link>
+                    <Link to = '/dogs/about'> <button> About</button></Link>
+                </div>
+                {/* <div>
+                    <SearchBar />
+                </div> */}
+                <div className={style.landing}>
+                    <a href="https://santt-dogs.vercel.app/"><h1>SPA Dogs</h1></a>
+                </div>
             </div>
     )
 }
