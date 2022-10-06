@@ -112,6 +112,8 @@ export default function Home (){
                 dogsPerPage={dogsPerPage}
                 allDogs={allDogs.length}
                 paginado={paginado}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
             />
             </div>
             <div className={style.card}>
@@ -136,6 +138,8 @@ export default function Home (){
                     dogsPerPage={dogsPerPage}
                     allDogs={allDogs.length}
                     paginado={paginado}
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
                 />
         </div>
     )
