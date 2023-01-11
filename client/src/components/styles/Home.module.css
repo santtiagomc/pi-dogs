@@ -74,4 +74,31 @@
     background-color: #FFE699;
     color: black;
 }
+@media (max-width: 700px) {
+    .filter{
+        align-items: center;
+        flex-direction: column;
+        width: 48vw;
+        height: 32vh;
+    }
+    .filter h3{
+        height: 26px;
+        margin: 1px;
+    }
+    .select{
+        margin: 2px;
+        margin-top: 1px;
+    }
+    .card{
+        grid-template-columns: repeat(2, 1fr);
+        width: 46vw;
+    }
+    .card div{
+        width: inherit;
+    }
+    .card img{
+        width: 146px;
+        height: 160px;
+    }
+}
 

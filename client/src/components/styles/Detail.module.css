@@ -42,3 +42,12 @@
     background-color: rgb(255, 0, 0);
     color: white;
 }
+@media(max-width: 700px) {
+    .container{
+        width: 84vw;
+    }
+    .img{
+        width: 160px;
+        height: 162px;
+    }
+}
