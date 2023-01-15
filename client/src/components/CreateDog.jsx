@@ -4,6 +4,7 @@ import { postDog, getTemperaments } from '../redux/actions'
 import { useDispatch, useSelector } from "react-redux";
 import style from './styles/CreateDog.module.css'
 import Nav from './Nav'
+import Footer from "./Footer";
 
 
 function validate (input) {
@@ -132,9 +133,9 @@ useEffect (() => {
 
     return (
         
-        <div >
+        <div className={style.container}>
             <Nav />
-            <div className={style.container}>
+            <div className={style.container2}>
                 <div>
                     <h1> CREATE </h1>
                 </div>
@@ -251,6 +252,7 @@ useEffect (() => {
                     </div>
                 </form>
             </div>
+            <Footer />
         </div>
     )
 }

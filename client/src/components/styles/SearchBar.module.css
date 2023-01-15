@@ -2,12 +2,13 @@
     justify-content: center;
     display: flex;
     float: initial;
-    margin-top: -36px;
+    margin-top: -38px;
     align-items: center;
 }
 
 .search button img {
     width: 20px;
+    height: 2rem;
 }
 
 .search button{
@@ -15,7 +16,7 @@
     border-radius: 6px;
     border: 1.5px solid black;
     cursor: pointer;
-
+    height: 34px;
 }
 
 .search input {

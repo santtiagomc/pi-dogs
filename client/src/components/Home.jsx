@@ -7,6 +7,7 @@ import Card from "./Card";
 import SearchBar from "./SearchBar";
 import Pagination from './Pagination'
 import style from './styles/Home.module.css'
+import Footer from "./Footer";
 
 export default function Home (){
 
@@ -135,12 +136,13 @@ export default function Home (){
                 })}
             </div>
             <Pagination
-                    dogsPerPage={dogsPerPage}
-                    allDogs={allDogs.length}
-                    paginado={paginado}
-                    currentPage={currentPage}
-                    setCurrentPage={setCurrentPage}
-                />
+                dogsPerPage={dogsPerPage}
+                allDogs={allDogs.length}
+                paginado={paginado}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+            />
+            <Footer />
         </div>
     )
 

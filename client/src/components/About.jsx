@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "./Nav";
+import Footer from "./Footer";
 import style from './styles/About.module.css'
-import MyImg from '../img/About.jpg'
 
 export default function About () {
 return(
@@ -11,11 +11,29 @@ return(
         </div>
         <div className={style.card}>
             <h1 className={style.name}>Santiago Parra Moreno</h1>
-            <img className={style.img} src={MyImg} alt="img" />
             <h2>Full Stack Developer</h2>
-            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui commodi facilis quibusdam in! Labore, quis veniam! Similique porro nobis enim itaque sapiente magni deleniti ab voluptatem, possimus culpa fuga assumenda!</h4>
-
+            <h4>Soy Full Stack Web Developer, con orientacion al desarrollo en Frontend.
+            He desarrollado diferentes proyectos entre ellos SPA(Single Page Application)
+            donde e logrado afianzar las habilidades aprendidas como lo son en:
+            <br />
+            <br />
+            Frontend: HTML, CSS, JavaScript, React, Redux
+            Backend: Express, Node, Sequelize
+            Database: PostgreSQL
+            VCS: Git/GitHub.
+            <br />
+            <br />
+            Estoy totalmente abierto a aprender nuevas tecnologías, como a
+            enfrentar nuevos desafios, para ir creciendo 
+            <br />
+            <br />
+            tanto personal como profesionalmente.
+            <br />
+            <br />
+            En la parte de abajo dejo mis redes sociales 
+            para que me puedan contactar o ver mas de mis proyectos.</h4>
         </div>
+        <Footer />
     </div>
 )
 }
