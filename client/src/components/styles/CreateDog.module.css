@@ -100,12 +100,13 @@
 @media(max-width: 700px){
     .container2{
         width: 96vw;
+        height: 74vh;
     }
     .ul{
-        height: 18vh;
+        height: 22vh;
     }
     .temperament{
         width: 80vw;
-        height: 8rem;
+        height: 12rem;
     }
 }

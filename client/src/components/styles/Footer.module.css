@@ -15,6 +15,7 @@ img{
 @media (max-width: 700px){
     footer{
         height: 2rem;
+        margin-top: 2rem;
     }
     img{
         width: 2rem;
