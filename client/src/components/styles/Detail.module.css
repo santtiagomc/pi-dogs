@@ -45,6 +45,7 @@
 @media(max-width: 700px) {
     .container{
         width: 84vw;
+        height: 66vh;
     }
     .img{
         width: 160px;
