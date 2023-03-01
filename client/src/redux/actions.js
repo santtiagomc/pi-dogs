@@ -10,11 +10,12 @@ export const POST_DOG = "POST_DOG"
 export const GET_DETAIL = "GET_DETAIL"
 export const DELETE = "DELETE"
 
+const url = "https://dogs-production-f85f.up.railway.app" 
 
 export function getAllDogs () {
     return async function (dispatch){
         try {
-            var json = await axios.get("http://localhost:3001/dogs")
+            var json = await axios.get(`${url}/dogs`)
             return dispatch ({
                 type: GET_ALL_DOGS,
                 payload: json.data
@@ -28,7 +29,7 @@ export function getAllDogs () {
 
 export function getTemperaments (){
     return async function (dispatch){
-        var json = await axios.get("http://localhost:3001/temperament", {});
+        var json = await axios.get(`${url}/temperament`, {});
         return dispatch ({
             type: GET_TEMPERAMENT, 
             payload: json.data
@@ -61,7 +62,7 @@ export function orderSort(payload){
 export function getNameDog (payload) {
     return async function (dispatch) {
         try {
-            var json = await axios.get(`http://localhost:3001/dogs?name=${payload}`);
+            var json = await axios.get(`${url}/dogs?name=${payload}`);
             return dispatch ({
                 type: GET_NAME_DOG,
                 payload: json.data
@@ -76,7 +77,7 @@ export function getNameDog (payload) {
 export function postDog (payload) {
     return async function(dispatch){
         try{
-            await axios.post('http://localhost:3001/dogs', payload);
+            await axios.post(`${url}/dogs`, payload);
             return {
                 type: POST_DOG,
                 }
@@ -90,7 +91,7 @@ export function postDog (payload) {
 export function getDetail(payload){
     return async function(dispatch){
         try{
-            var json = await axios.get(`http://localhost:3001/dogs/${payload}`)
+            var json = await axios.get(`${url}/dogs/${payload}`)
             return dispatch({
                 type: GET_DETAIL,
                 payload: json.data
@@ -105,7 +106,7 @@ export function getDetail(payload){
 export function deleteDog (payload){
     return async function (dispatch){
         try{
-            const response = await axios.delete(`http://localhost:3001/dogs/${payload}`);
+            const response = await axios.delete(`${url}/dogs/${payload}`);
             return {
                 type: DELETE,
                 payload: response.data
