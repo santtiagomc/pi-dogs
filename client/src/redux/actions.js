@@ -10,7 +10,7 @@ export const POST_DOG = "POST_DOG"
 export const GET_DETAIL = "GET_DETAIL"
 export const DELETE = "DELETE"
 
-const url = "https://dogs-production-f85f.up.railway.app" 
+const url = "http://localhost:3001" 
 
 export function getAllDogs () {
     return async function (dispatch){
